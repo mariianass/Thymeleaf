@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Saludo Dinámico</title>
+</head>
+<body>
+    <h1 th:text="${saludo}" th:style="${claseCss}">Texto de Prueba</h1>
+    <h3>Objetos Implicitos Y Utilidades</h3>
+    <ul>
+      <li>
+        <strong>1. Session</strong>
+        <span th:text="${session.rol}">Invitado</span>
+      </li>
+
+      <li>
+        <strong>2. Parametros</strong>
+        <span th:text="${param.nombre != null ? param.nombre: 'Ninguno'}"></span>
+      </li>
+
+      <li>
+        <strong>3. Utilidades</strong>
+        Fecha Actual Formateada: <span th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}"></span>
+      </li>
+    </ul>
+</body>
+</html>
